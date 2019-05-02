@@ -1,0 +1,9 @@
+{
+  "github-entity-row": {
+    "updated_at": "2019-05-03",
+    "version": "1.0.0",
+    "remote_location": "https://raw.githubusercontent.com/benct/lovelace-github-entity-row/master/github-entity-row.js",
+    "visit_repo": "https://github.com/benct/lovelace-github-entity-row",
+    "changelog": "https://github.com/benct/lovelace-github-entity-row"
+  }
+}
