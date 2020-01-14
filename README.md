@@ -1,5 +1,5 @@
 # github-entity-row
-GitHub repository sensor data on entity rows in Home Assistant's Lovelace UI
+Show GitHub repository sensor data on entity rows in Home Assistant's Lovelace UI
 
 [![GH-release](https://img.shields.io/badge/version-1.0.0-red.svg?style=flat-square)](https://raw.githubusercontent.com/benct/lovelace-github-entity-row/master/github-entity-row.js)
 [![GH-last-commit](https://img.shields.io/github/last-commit/benct/lovelace-github-entity-row.svg?style=flat-square)](https://github.com/benct/lovelace-github-entity-row/commits/master)
@@ -8,24 +8,19 @@ GitHub repository sensor data on entity rows in Home Assistant's Lovelace UI
 
 ## Setup
 
-Add [github-entity-row.js](https://raw.githubusercontent.com/benct/lovelace-github-entity-row/master/github-entity-row.js) to your `<config>/www/` folder. Add the following to your `ui-lovelace.yaml` file:
-
+Add [github-entity-row.js](https://raw.githubusercontent.com/benct/lovelace-github-entity-row/master/github-entity-row.js)
+to your `<config>/www/` folder. Add the following to your `ui-lovelace.yaml` file:
 ```yaml
 resources:
   - url: /local/github-entity-row.js?v=1.0.0
-    type: js
+    type: module
 ```
 
-### *(Optional)* Add to custom updater
-
-1. Make sure you have the [custom_updater](https://github.com/custom-components/custom_updater) component installed and working.
-
-2. Add a new reference under `card_urls` in your `custom_updater` configuration in `configuration.yaml`.
-
+OR install using [HACS](https://hacs.xyz/) and add this instead:
 ```yaml
-custom_updater:
-  card_urls:
-    - https://raw.githubusercontent.com/benct/lovelace-github-entity-row/master/tracker.json
+resources:
+  - url: /community_plugin/lovelace-github-entity-row/github-entity-row.js
+    type: module
 ```
 
 ## Options
@@ -55,9 +50,9 @@ entities:
 
 ## My cards
 
-[xiaomi-vacuum-card](https://github.com/benct/lovelace-xiaomi-vacuum-card) | 
-[github-entity-row](https://github.com/benct/lovelace-github-entity-row) | 
-[multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row) | 
-[attribute-entity-row](https://github.com/benct/lovelace-attribute-entity-row)
+[xiaomi-vacuum-card](https://github.com/benct/lovelace-xiaomi-vacuum-card) |
+[multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row) |
+[github-entity-row](https://github.com/benct/lovelace-github-entity-row) |
+[~~attribute-entity-row~~](https://github.com/benct/lovelace-attribute-entity-row)
 
 [![BMC](https://www.buymeacoffee.com/assets/img/custom_images/white_img.png)](https://www.buymeacoff.ee/benct)
