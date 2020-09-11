@@ -4,26 +4,33 @@ Show GitHub repository sensor data on entity rows in Home Assistant's Lovelace U
 [![GH-release](https://img.shields.io/badge/version-1.0.0-red.svg?style=flat-square)](https://raw.githubusercontent.com/benct/lovelace-github-entity-row/master/github-entity-row.js)
 [![GH-last-commit](https://img.shields.io/github/last-commit/benct/lovelace-github-entity-row.svg?style=flat-square)](https://github.com/benct/lovelace-github-entity-row/commits/master)
 [![GH-code-size](https://img.shields.io/github/languages/code-size/benct/lovelace-github-entity-row.svg?style=flat-square)](https://github.com/benct/lovelace-github-entity-row)
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=flat-square)](https://github.com/custom-components/hacs)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=flat-square)](https://github.com/hacs)
 
-## Setup
+**NOTE:** This is not a standalone lovelace card, but a row element for the [entities](https://www.home-assistant.io/lovelace/entities/) card.
+
+## Installation
 
 Add [github-entity-row.js](https://raw.githubusercontent.com/benct/lovelace-github-entity-row/master/github-entity-row.js)
-to your `<config>/www/` folder. Add the following to your `ui-lovelace.yaml` file:
+to your `<config>/www/` folder and add the following to the `configuration.yaml` file:
 ```yaml
-resources:
-  - url: /local/github-entity-row.js?v=1.0.0
-    type: module
+lovelace:
+  resources:
+    - url: /local/github-entity-row.js?v=1.0.0
+      type: module
 ```
 
-OR install using [HACS](https://hacs.xyz/) and add this instead:
+_OR_ install using [HACS](https://hacs.xyz/) and add this (if in YAML mode):
 ```yaml
-resources:
-  - url: /community_plugin/lovelace-github-entity-row/github-entity-row.js
-    type: module
+lovelace:
+  resources:
+    - url: /hacsfiles/lovelace-github-entity-row/github-entity-row.js
+      type: module
 ```
 
-## Options
+The above configuration can be managed directly in the Configuration -> Lovelace Dashboards -> Resources panel when not using YAML mode,
+or added by clicking the "Add to lovelace" button on the HACS dashboard after installing the plugin.
+
+## Configuration
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
