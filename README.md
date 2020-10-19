@@ -56,6 +56,19 @@ entities:
     entity: sensor.lovelace_xiaomi_vacuum_card
 ```
 
+Usage with [auto-entities](https://github.com/thomasloven/lovelace-auto-entities) card:
+```yaml
+type: custom:auto-entities
+card:
+  type: entities
+filter:
+  include:
+    - entity_id: sensor.github*   # or use other matchers
+      options:
+        type: custom:github-entity-row
+        <github-entity-row options>
+```
+
 ## My cards
 
 [xiaomi-vacuum-card](https://github.com/benct/lovelace-xiaomi-vacuum-card) |
