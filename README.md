@@ -74,6 +74,7 @@ filter:
 [xiaomi-vacuum-card](https://github.com/benct/lovelace-xiaomi-vacuum-card) |
 [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row) |
 [github-entity-row](https://github.com/benct/lovelace-github-entity-row) |
+[battery-entity-row](https://github.com/benct/lovelace-battery-entity-row) |
 [~~attribute-entity-row~~](https://github.com/benct/lovelace-attribute-entity-row)
 
 [![BMC](https://www.buymeacoffee.com/assets/img/custom_images/white_img.png)](https://www.buymeacoff.ee/benct)
