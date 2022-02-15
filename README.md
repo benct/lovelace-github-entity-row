@@ -39,24 +39,24 @@ The above configuration can be managed in the Configuration -> Dashboards -> Res
 | Name   | Type   | Default         | Description                               |
 |--------|--------|-----------------|-------------------------------------------|
 | type   | string | **Required**    | `custom:github-entity-row`                |
-| user   | string | **Required**    | Your GitHub user name                     |
-| repo   | string | **Required**    | Your GitHub repository                    |
+| repo   | string | **Required**    | Your GitHub repository path               |
 | sensor | string | `<user>_<repo>` | Specify a custom sensor entity (optional) |
 | name   | string | `repo`          | Override repository name                  |
 | icon   | string | `mdi:github`    | Override default entity icon              |
 
-The `user` and `repo` fields need to exactly match your GitHub user and repository names. If you rename the sensor
-entity IDs from the GitHub integration, you can specify the updated sensor ID with the `sensor` field (without the
-domain and type suffix). For example, if the integration exposes `sensor.custom_sensor_id_latest_release`, you should
-specify `custom_sensor_id`.
+The `repo` field needs to exactly match your GitHub user and repository path, i.e. `benct/lovelace-github-entity-row`.
+
+If you rename the sensor entity IDs from the GitHub integration, you can specify the updated sensor ID with the `sensor`
+field (without the domain and type suffix). For example, if the integration
+exposes `sensor.custom_sensor_id_latest_release`, you should specify `custom_sensor_id`.
 
 ## Migrate to version 2
 
 The GitHub [integration](https://www.home-assistant.io/integrations/github/) was changed in HA version `2022.2.0` to
 include several sensors for each GitHub repository. If you are using the latest HA installation, you need to upgrade to
-version `>2.0.0` of this card. The main change is that the `entity` field has been replaced by `user` and `repo`. You
-might also need to manually enable the following sensors from your GitHub integration; `Stars`, `Issues`
-and `Pull Requests`.
+version `>2.0.0` of this card. The main change is that the `entity` field has been replaced by ~~user
+and~~ `repo` (`user` removed in `2.1.0`). You might also need to manually enable the following sensors from your GitHub
+integration; `Stars`, `Issues` and `Pull Requests`.
 
 ## Example
 
@@ -67,19 +67,15 @@ type: entities
 title: GitHub
 entities:
   - type: custom:github-entity-row
-    user: benct
-    repo: home-assistant-config
+    repo: benct/home-assistant-config
     name: HA Config
   - type: custom:github-entity-row
-    user: benct
-    repo: lovelace-github-entity-row
+    repo: benct/lovelace-github-entity-row
     icon: mdi:github
   - type: custom:github-entity-row
-    user: benct
-    repo: lovelace-multiple-entity-row
+    repo: benct/lovelace-multiple-entity-row
   - type: custom:github-entity-row
-    user: benct
-    repo: lovelace-xiaomi-vacuum-card
+    repo: benct/lovelace-xiaomi-vacuum-card
 ```
 
 ## My cards

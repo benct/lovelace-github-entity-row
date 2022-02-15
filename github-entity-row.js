@@ -46,13 +46,13 @@ class GithubEntityRow extends Polymer.Element {
 
     goto(event, path) {
         event.stopPropagation();
-        window.open(`https://github.com/${this._config.user}/${this._config.repo}/${path}`);
+        window.open(`https://github.com/${this._config.repo}/${path}`);
     }
 
     setConfig(config) {
-        if (!config.user || !config.repo) throw new Error('Please define a GitHub user and repository.');
+        if (!config.repo) throw new Error('Please define a GitHub repository path.');
 
-        const sensor = config.sensor || `${config.user}_${config.repo}`.replaceAll('-', '_');
+        const sensor = config.sensor || config.repo.replaceAll('-', '_').replaceAll('/', '_');
         this._config = {
             ...config,
             name: config.name || config.repo,
