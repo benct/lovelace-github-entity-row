@@ -19,7 +19,7 @@ to your `<config>/www/` folder and add the following to the `configuration.yaml`
 ```yaml
 lovelace:
   resources:
-    - url: /local/github-entity-row.js?v=2.0.0
+    - url: /local/github-entity-row.js?v=2.1.0
       type: module
 ```
 
