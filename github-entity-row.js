@@ -78,4 +78,10 @@ class GithubEntityRow extends Polymer.Element {
     }
 }
 
+console.info(
+    '%c GITHUB-ENTITY-ROW %c 2.0.0 ',
+    'color: cyan; background: black; font-weight: bold;',
+    'color: darkblue; background: white; font-weight: bold;'
+);
+
 customElements.define('github-entity-row', GithubEntityRow);
