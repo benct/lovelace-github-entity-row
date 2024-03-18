@@ -1,7 +1,16 @@
-class GithubEntityRow extends Polymer.Element {
+import { html, LitElement } from 'https://unpkg.com/lit-element@2.0.1/lit-element.js?module';
 
-    static get template() {
-        return Polymer.html`
+class GithubEntityRow extends LitElement {
+
+      static get properties() {
+        return {
+          _hass: {},
+          _config: {},
+        };
+      }
+
+      render() {
+        return html`
           <style>
             .flex {
               display: flex;
@@ -21,19 +30,19 @@ class GithubEntityRow extends Polymer.Element {
               color: var(--primary-color);
             }
           </style>
-          <hui-generic-entity-row hass="[[_hass]]" config="[[_config]]">
+          <hui-generic-entity-row .hass="${this._hass}" .config="${this._config}">
             <div class="flex">
-              <div class="entity" on-click="issues"  title="Open issues">
+              <div class="entity" @click="${this.issues}"  title="Open issues">
                 <ha-icon class="icon" icon="mdi:alert-circle-outline"></ha-icon>
-                <span>[[stateObjIssues.state]]</span>
+                <span>${this.stateObjIssues.state}</span>
               </div>
-              <div class="entity" on-click="pulls" title="Open pull requests">
+              <div class="entity" @click="${this.pulls}" title="Open pull requests">
                 <ha-icon class="icon" icon="mdi:source-pull"></ha-icon>
-                <span>[[stateObjPRs.state]]</span>
+                <span>${this.stateObjPRs.state}</span>
               </div>
-              <div class="entity" on-click="stars" title="Stargazers">
+              <div class="entity" @click="${this.stars}" title="Stargazers">
                 <ha-icon class="icon" icon="mdi:star"></ha-icon>
-                <span>[[stateObjStars.state]]</span>
+                <span>${this.stateObjStars.state}</span>
               </div>
             </div>
           </hui-generic-entity-row>
